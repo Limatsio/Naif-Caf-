@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Naif Café — Providencia &amp; Las Condes</title>
+<meta name="description" content="Cafetería, pastelería y gastronomía venezolana en Santiago. Dos rincones: Providencia y Las Condes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,460;0,9..144,560;0,9..144,680;1,9..144,460;1,9..144,560&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= LOADER / ENTRANCE ANIMATION ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader-cup" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="steam steam-1" d="M96 40c-10 14 10 18 0 32s10 18 0 32" stroke="#FBF1E1" stroke-width="5" stroke-linecap="round"/>
+    <path class="steam steam-2" d="M124 32c-10 14 10 18 0 32s10 18 0 32" stroke="#FBF1E1" stroke-width="5" stroke-linecap="round"/>
+    <path class="steam steam-3" d="M150 40c-10 14 10 18 0 32s10 18 0 32" stroke="#FBF1E1" stroke-width="5" stroke-linecap="round"/>
+    <path class="cup-body" d="M56 108h128l-10 62c-2 14-14 24-28 24h-52c-14 0-26-10-28-24l-10-62z" stroke="#FBF1E1" stroke-width="6" stroke-linejoin="round"/>
+    <path class="cup-handle" d="M184 118c22-4 34 10 30 28s-24 24-40 20" stroke="#FBF1E1" stroke-width="6" stroke-linecap="round"/>
+    <path class="cup-saucer" d="M40 196c0 0 30 12 80 12s80-12 80-12" stroke="#FBF1E1" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <p class="loader-word" aria-label="Naif Café">
+    <span>N</span><span>a</span><span>i</span><span>f</span><span>&nbsp;</span><span>C</span><span>a</span><span>f</span><span>é</span>
+  </p>
+  <p class="loader-sub">pastelería &amp; gastronomía venezolana</p>
+</div>
+
+<!-- ================= APP SHELL ================= -->
+<div class="app" id="app">
+
+  <header class="topbar">
+    <button class="brand" data-nav="inicio" aria-label="Ir a inicio">
+      <svg class="brand-mark" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" fill="#1E4638"/>
+        <path d="M17 26h26l-3 15c-1 4-4 7-8 7h-4c-4 0-7-3-8-7l-3-15z" stroke="#FBF1E1" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M43 29c6-1 9 3 8 8s-6 6-11 5" stroke="#FBF1E1" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">Naif Café</span>
+    </button>
+
+    <nav class="tabs" id="tabs" aria-label="Secciones">
+      <button class="tab is-active" data-nav="inicio">Inicio</button>
+      <button class="tab" data-nav="historia">Nuestra historia</button>
+      <button class="tab" data-nav="menu">Menú</button>
+      <button class="tab" data-nav="ubicaciones">Ubicaciones</button>
+    </nav>
+
+    <a class="whatsapp-pill" id="topWhatsapp" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 0 1 7.1 12.4l-.2.4 1.1 4-4.1-1.1-.4.2A8.2 8.2 0 1 1 12 3.8Zm-3.5 4c-.2 0-.5 0-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.6c.1.1 1.8 2.9 4.5 4 2.2 1 2.7.8 3.1.7.5 0 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5Z"/></svg>
+      Escríbenos
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir navegación" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="stage" id="stage">
+
+    <!-- ============ PANEL: INICIO ============ -->
+    <section class="panel is-active" id="panel-inicio" data-panel="inicio">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Providencia &amp; Las Condes, Santiago</p>
+          <h1 class="hero-title">Sabores de Venezuela<br>para tu pausa del día.</h1>
+          <p class="hero-text">Arepas, cachapas y café de especialidad servidos en dos rincones cálidos de Santiago. Casi dos años compartiendo aromas y buenos ratos con nuestro barrio.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-nav="menu">Ver el menú</button>
+            <button class="btn btn-ghost" data-nav="ubicaciones">Cómo llegar</button>
+          </div>
+          <div class="hero-stats">
+            <div><strong>2</strong><span>rincones en Santiago</span></div>
+            <div><strong>~2 años</strong><span>compartiendo aromas</span></div>
+            <div><strong>13</strong><span>familias de sabores en la carta</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 520 560" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+            <path d="M260 40C130 40 70 150 90 260c16 92 100 150 90 240" stroke="none"/>
+            <circle cx="260" cy="280" r="230" fill="#E8A93B"/>
+            <path d="M40 340c40-30 100-40 160-10s130 10 170-30 90-40 120 0" stroke="#1E4638" stroke-width="10" stroke-linecap="round" fill="none" opacity=".35"/>
+            <!-- arepa plate -->
+            <ellipse cx="200" cy="430" rx="150" ry="34" fill="#1E4638"/>
+            <ellipse cx="200" cy="418" rx="120" ry="52" fill="#D1502F"/>
+            <ellipse cx="200" cy="410" rx="98" ry="38" fill="#F3E6CC"/>
+            <!-- coffee cup -->
+            <g transform="translate(300,150)">
+              <path d="M0 60h150l-12 78c-3 16-16 28-32 28h-62c-16 0-29-12-32-28L0 60z" fill="#7A2E3A"/>
+              <ellipse cx="75" cy="60" rx="75" ry="18" fill="#3B1620"/>
+              <ellipse cx="75" cy="58" rx="58" ry="12" fill="#E8A93B"/>
+              <path d="M150 78c26-6 42 10 36 30s-30 24-48 18" stroke="#7A2E3A" stroke-width="12" stroke-linecap="round" fill="none"/>
+              <path class="hero-steam" d="M40 10c-10 12 9 16 0 28s9 16 0 28" stroke="#1E4638" stroke-width="5" stroke-linecap="round" fill="none" opacity=".5"/>
+              <path class="hero-steam" d="M75 0c-10 12 9 16 0 28s9 16 0 28" stroke="#1E4638" stroke-width="5" stroke-linecap="round" fill="none" opacity=".5"/>
+              <path class="hero-steam" d="M110 10c-10 12 9 16 0 28s9 16 0 28" stroke="#1E4638" stroke-width="5" stroke-linecap="round" fill="none" opacity=".5"/>
+            </g>
+            <!-- leaves -->
+            <path d="M60 120c40-30 80-10 90 20-40 10-80-4-90-20Z" fill="#1E4638"/>
+            <path d="M420 400c-10 46-56 66-92 56 16-40 54-64 92-56Z" fill="#1E4638"/>
+            <circle cx="440" cy="140" r="14" fill="#D1502F"/>
+            <circle cx="90" cy="470" r="10" fill="#7A2E3A"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PANEL: HISTORIA ============ -->
+    <section class="panel" id="panel-historia" data-panel="historia">
+      <div class="historia">
+        <div class="historia-lead">
+          <p class="hero-eyebrow">Nuestra historia</p>
+          <h2 class="historia-title">Un rincón naif para el café de todos los días.</h2>
+          <p class="historia-quote">"Casi dos años de miles de sonrisas y millones de aromas a café compartidos. Te celebramos a ti, porque haces posible cada día."</p>
+        </div>
+        <div class="pilares">
+          <div class="pilar">
+            <span class="pilar-mark" style="background:var(--paprika)"></span>
+            <h3>Cocina venezolana de casa</h3>
+            <p>Arepas, cachapas y brunches preparados como en casa, con recetas que cruzaron fronteras para llegar a tu mesa.</p>
+          </div>
+          <div class="pilar">
+            <span class="pilar-mark" style="background:var(--mustard)"></span>
+            <h3>Café de especialidad</h3>
+            <p>Desde el ristretto hasta el chai latte: cada taza pensada para acompañar tu pausa, corta o larga.</p>
+          </div>
+          <div class="pilar">
+            <span class="pilar-mark" style="background:var(--plum)"></span>
+            <h3>Dos rincones, un mismo cariño</h3>
+            <p>Providencia y Las Condes, dos casas abiertas todos los días para que encuentres tu Naif más cercano.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PANEL: MENU ============ -->
+    <section class="panel" id="panel-menu" data-panel="menu">
+      <div class="menu-wrap">
+        <div class="menu-head">
+          <div>
+            <p class="hero-eyebrow">La carta</p>
+            <h2 class="menu-title">El menú completo</h2>
+          </div>
+          <p class="menu-note">Precios válidos en ambas sucursales. Filtra por familia de sabores.</p>
+        </div>
+        <div class="menu-pills" id="menuPills"></div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ PANEL: UBICACIONES ============ -->
+    <section class="panel" id="panel-ubicaciones" data-panel="ubicaciones">
+      <div class="loc-wrap">
+        <div class="menu-head">
+          <div>
+            <p class="hero-eyebrow">Visítanos</p>
+            <h2 class="menu-title">Dos rincones en Santiago</h2>
+          </div>
+          <p class="menu-note">Elige el más cercano y escríbenos directo por WhatsApp.</p>
+        </div>
+        <div class="loc-grid">
+
+          <article class="loc-card">
+            <div class="loc-tag" style="background:var(--paprika)">Providencia</div>
+            <h3>Naif Café Providencia</h3>
+            <p class="loc-address">Av. Pocuro 2580, Providencia</p>
+            <p class="loc-hours">Horario: por confirmar directamente con el local</p>
+            <div class="loc-actions">
+              <a class="btn btn-primary btn-sm" href="https://tr.ee/A0O_Srkdj2" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-line btn-sm" href="https://www.google.com/maps/search/?api=1&query=Av.+Pocuro+2580%2C+Providencia%2C+Santiago" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+            <div class="loc-map">
+              <iframe title="Mapa Naif Café Providencia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Pocuro+2580%2C+Providencia%2C+Santiago&output=embed"></iframe>
+            </div>
+            <div class="loc-more">
+              <a href="https://www.instagram.com/naifcafe.cl/?hl=es" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.rappi.cl/restaurantes/900086896-naif-cafe-providencia" target="_blank" rel="noopener">Rappi</a>
+              <a href="https://www.ubereats.com/cl/store/naif-cafe-pocuro/MRl_LXvtW1yI0XF30MDExA" target="_blank" rel="noopener">Uber Eats</a>
+            </div>
+          </article>
+
+          <article class="loc-card">
+            <div class="loc-tag" style="background:var(--mustard)">Las Condes</div>
+            <h3>Naif Café Las Condes</h3>
+            <p class="loc-address">Presidente Errázuriz 3471, Las Condes</p>
+            <p class="loc-hours">Lun a vie 7:30–20:30 hrs · Sáb y dom 9:00–20:30 hrs</p>
+            <div class="loc-actions">
+              <a class="btn btn-primary btn-sm" href="https://tr.ee/yymtXQYoIC" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-line btn-sm" href="https://www.google.com/maps/search/?api=1&query=Presidente+Err%C3%A1zuriz+3471%2C+Las+Condes%2C+Santiago" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+            <div class="loc-map">
+              <iframe title="Mapa Naif Café Las Condes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Presidente+Err%C3%A1zuriz+3471%2C+Las+Condes%2C+Santiago&output=embed"></iframe>
+            </div>
+            <div class="loc-more">
+              <a href="https://linktr.ee/NaifCafe" target="_blank" rel="noopener">Todos los enlaces</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- floating quick-contact -->
+  <div class="quickcontact" id="quickContact">
+    <button class="quickcontact-btn" id="quickContactBtn" aria-expanded="false" aria-label="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 0 1 7.1 12.4l-.2.4 1.1 4-4.1-1.1-.4.2A8.2 8.2 0 1 1 12 3.8Z"/></svg>
+    </button>
+    <div class="quickcontact-panel" id="quickContactPanel">
+      <p class="qc-title">Escríbenos por WhatsApp</p>
+      <a class="qc-link" id="qcProvidencia" href="#" target="_blank" rel="noopener">
+        <span class="qc-dot" style="background:#D1502F"></span>
+        <span>
+          <strong>Providencia</strong>
+          <em>Av. Pocuro 2580</em>
+        </span>
+      </a>
+      <a class="qc-link" id="qcLasCondes" href="#" target="_blank" rel="noopener">
+        <span class="qc-dot" style="background:#E8A93B"></span>
+        <span>
+          <strong>Las Condes</strong>
+          <em>Pdte. Errázuriz 3471</em>
+        </span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
